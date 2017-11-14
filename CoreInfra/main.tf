@@ -19,3 +19,11 @@ resource "aws_subnet" "crc_subnet" {
     Name = "crc_subnet"
   }
 }
+
+resource "aws_internet_gateway" "crc_gw" {
+  vpc_id = "${aws_vpc.crc_vpc.id}"
+
+  tags {
+    Name = "crc_gateway"
+  }
+}
